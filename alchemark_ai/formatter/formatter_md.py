@@ -18,8 +18,6 @@ class FormatterMD:
             for item in self.content:
                 if not isinstance(item, PDFResult):
                     raise ValueError("[FORMATTER] Content must be a List of PDFResult.")
-                if not item.text or not item.text.strip():
-                    raise ValueError("[FORMATTER] Content text is empty.")
             if not len(self.content):
                 raise ValueError("[FORMATTER] Content is empty.")
             
