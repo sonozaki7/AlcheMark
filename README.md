@@ -110,7 +110,103 @@ AlcheMark AI provides a seamless solution for converting PDF documents into well
 | **process_images** | `False` | Enable extraction and processing of images from the PDF |
 | **keep_images_inline** | `False` | Keep images inline as base64 in the markdown text. When set to `False`, images are replaced with references (`[IMAGE](hash)`) |
 
-## Test Coverage
+## Development Setup
+
+### Prerequisites
+
+- Python 3.11 or higher
+- pip package manager
+
+### Setting Up the Development Environment
+
+1. **Clone the repository:**
+```bash
+git clone https://github.com/matthsena/AlcheMark-ai.git
+cd AlcheMark-ai
+```
+
+2. **Create a virtual environment (recommended):**
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. **Install the package in development mode:**
+```bash
+pip install -e .
+```
+
+4. **Install development dependencies:**
+```bash
+pip install -e ".[dev]"
+```
+
+### Running the Main Function
+
+The project includes a main function that demonstrates the PDF to Markdown conversion:
+
+**Option 1: Using the main module**
+```bash
+python -m alchemark_ai.main
+```
+
+**Option 2: Running directly**
+```bash
+python alchemark_ai/main.py
+```
+
+**Option 3: Using the example script**
+```bash
+python examples/basic_usage.py
+```
+
+The main function will process the sample PDF located in `sample/Sample.pdf` and output the structured JSON results for each page.
+
+### Running Tests with pytest
+
+AlcheMark AI uses pytest for testing. The test suite includes comprehensive coverage of all major functionality.
+
+**Run all tests:**
+```bash
+pytest
+```
+
+**Run tests with verbose output:**
+```bash
+pytest -v
+```
+
+**Run tests with coverage report:**
+```bash
+pytest --cov=alchemark_ai --cov-report=term-missing
+```
+
+**Run a specific test file:**
+```bash
+pytest tests/test_pdf2md.py
+```
+
+**Run a specific test function:**
+```bash
+pytest tests/test_pdf2md.py::test_function_name
+```
+
+**Run tests in parallel (faster):**
+```bash
+pip install pytest-xdist
+pytest -n auto
+```
+
+### Test Structure
+
+The test suite is organized as follows:
+
+- `tests/test_formatter.py` - Tests for markdown formatting functionality
+- `tests/test_integration.py` - Integration tests for the complete pipeline
+- `tests/test_models.py` - Tests for data models
+- `tests/test_pdf2md.py` - Tests for PDF to markdown conversion
+
+### Test Coverage
 
 AlcheMark AI maintains a high test coverage to ensure reliability:
 
