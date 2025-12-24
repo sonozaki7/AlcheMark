@@ -341,14 +341,17 @@ class ComprehensiveValidator:
                 words=[]
             )
             
-            formatter = FormatterMD(mock_pdf_result)
-            formatted_result = formatter.format()
+            # FormatterMD expects a list of PDFResult objects
+            formatter = FormatterMD([mock_pdf_result])
+            formatted_results = formatter.format()
             
-            assert isinstance(formatted_result, FormattedResult), "Result should be FormattedResult"
-            assert formatted_result.text == mock_pdf_result.text, "Text should match"
+            assert isinstance(formatted_results, list), "Result should be a list"
+            assert len(formatted_results) > 0, "Result list should not be empty"
+            assert isinstance(formatted_results[0], FormattedResult), "Result should contain FormattedResult objects"
+            assert formatted_results[0].text == mock_pdf_result.text, "Text should match"
             
             details = "FormatterMD class working correctly\n"
-            details += f"Formatted text length: {len(formatted_result.text)}"
+            details += f"Formatted text length: {len(formatted_results[0].text)}"
             
             self.report.add_test("Test 09: FormatterMD Class", "PASSED", details)
         except Exception as e:

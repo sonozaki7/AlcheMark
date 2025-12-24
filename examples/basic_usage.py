@@ -4,7 +4,7 @@ Basic usage example for AlcheMark-AI
 This example shows how to use the AlcheMark-AI library to convert a PDF to Markdown.
 """
 import os
-from alchemark_ai import convert_pdf_to_markdown
+from alchemark_ai import pdf2md
 
 def main():
     # Path to the PDF file
@@ -16,7 +16,7 @@ def main():
     
     try:
         # Use the library's main function to convert PDF to markdown
-        formatted_results = convert_pdf_to_markdown(pdf_file_path, process_images)
+        formatted_results = pdf2md(pdf_file_path, process_images=process_images, keep_images_inline=False)
         
         # Print results
         print(f"Successfully processed {len(formatted_results)} pages from PDF")

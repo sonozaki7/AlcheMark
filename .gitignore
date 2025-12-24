@@ -51,6 +51,7 @@ coverage.xml
 
 # Validation reports
 validation/validation_report_*_tests_*.txt
+
 .pytest_cache/
 cover/
 

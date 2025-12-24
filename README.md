@@ -15,8 +15,8 @@ AlcheMark is a lightweight PDF to Markdown, alchemical-inspired toolkit that tra
 pip install alchemark-ai
 
 # Or install from source
-git clone https://github.com/matthsena/AlcheMark-ai.git
-cd AlcheMark-ai
+git clone https://github.com/marqbritt/AlcheMark.git
+cd AlcheMark
 pip install -e .
 ```
 
@@ -204,7 +204,7 @@ AlcheMark AI includes a comprehensive validation tool that tests all functionali
 **Run comprehensive validation:**
 ```bash
 python validation/comprehensive_validation.py
-```
+``` 
 
 This validation script:
 - Tests all core functionality (PDF to Markdown conversion, metadata extraction, element detection)
@@ -226,7 +226,7 @@ The validation report is saved to `validation/validation_report_12_tests_YYYYMMD
 ================================================================================
 AlcheMark AI - Comprehensive Validation Report
 ================================================================================
-Generated: 2025-12-19 10:30:45
+Generated: 2025-12-24 21:01:30
 
 SUMMARY
 --------------------------------------------------------------------------------
@@ -267,7 +267,13 @@ alchemark_ai/pdf2md/pdf2md.py               30      0   100%
 TOTAL                                      193      2    99%
 ```
 
-Current test suite includes 37 tests covering all major functionality, with an overall coverage of 99%.
+Current test suite includes **37 tests** covering all major functionality:
+- 17 formatter tests (test_formatter.py)
+- 3 integration tests (test_integration.py)  
+- 8 model tests (test_models.py)
+- 9 PDF2MD tests (test_pdf2md.py)
+
+**All 37 tests passing** with an overall coverage of 99%.
 
 ## Contributing
 

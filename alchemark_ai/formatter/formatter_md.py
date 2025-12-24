@@ -20,6 +20,9 @@ class FormatterMD:
                     raise ValueError("[FORMATTER] Content must be a List of PDFResult.")
             if not len(self.content):
                 raise ValueError("[FORMATTER] Content is empty.")
+            for item in self.content:
+                if not item.text or not item.text.strip():
+                    raise ValueError("[FORMATTER] Content text is empty.")
             
     def _count_markdown_elements(self, text):
         try:

@@ -15,9 +15,11 @@ class PDF2MarkDown:
             logging.info(f"[CHECK FILE] Checking if the file {self.file_path} exists and is a PDF.")
             file_path = Path(self.file_path)
             if not file_path.is_file():
-                raise FileNotFoundError(f"[CHECK FILE] The file {self.file_path} does not exist.")
+                raise ValueError(f"[CHECK FILE] The file {self.file_path} does not exist.")
             if file_path.suffix.lower() != '.pdf':
                 raise ValueError(f"[CHECK FILE] The file {self.file_path} is not a PDF file.")
+        except ValueError:
+            raise
         except Exception as e:
             raise ValueError(f"[CHECK FILE] Invalid file: {self.file_path} --> {e}")
 

@@ -139,7 +139,7 @@ def test_check_file_generic_error(monkeypatch, sample_pdf_path):
     def mock_isfile_error(*args, **kwargs):
         raise Exception("Generic test error")
     
-    monkeypatch.setattr("os.path.isfile", mock_isfile_error)
+    monkeypatch.setattr("pathlib.Path.is_file", mock_isfile_error)
     
     with pytest.raises(ValueError) as excinfo:
         pdf2md._check_file()
