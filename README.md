@@ -197,6 +197,51 @@ pip install pytest-xdist
 pytest -n auto
 ```
 
+### Comprehensive Validation Suite
+
+AlcheMark AI includes a comprehensive validation tool that tests all functionality and generates human-readable reports:
+
+**Run comprehensive validation:**
+```bash
+python validation/comprehensive_validation.py
+```
+
+This validation script:
+- Tests all core functionality (PDF to Markdown conversion, metadata extraction, element detection)
+- Validates token counting and language detection
+- Tests image processing capabilities
+- Verifies error handling with edge cases
+- Generates a timestamped report file with detailed results
+- Provides a clear summary of passed/failed tests
+- Numbers each test (Test 01 through Test 12) for easy reference
+
+The validation report is saved to `validation/validation_report_12_tests_YYYYMMDD_HHMMSS.txt` and includes:
+- Overall test summary with pass/fail counts
+- Detailed results for each test with specific metrics
+- Error messages and stack traces for failed tests
+- Human-readable formatting for easy review
+
+**Example output:**
+```
+================================================================================
+AlcheMark AI - Comprehensive Validation Report
+================================================================================
+Generated: 2025-12-19 10:30:45
+
+SUMMARY
+--------------------------------------------------------------------------------
+Total Tests: 12
+Passed: 12 ✓
+Failed: 0 ✗
+Success Rate: 100.0%
+```
+
+This tool is perfect for:
+- Validating a fresh installation
+- Verifying functionality after updates
+- Demonstrating all features to users
+- Quality assurance testing
+
 ### Test Structure
 
 The test suite is organized as follows:
